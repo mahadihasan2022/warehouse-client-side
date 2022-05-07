@@ -6,7 +6,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-container">
       <div
         id="carouselDarkVariant"
         class="carousel slide carousel-fade carousel-dark relative"
@@ -32,9 +32,9 @@ const Home = () => {
         <Services></Services>
       </div>
 
-      <div>
+      <div className="border">
         <h1 className="text-5xl text-center font-bold p-4">ExcluSive </h1>
-        <div className="grid grid-cols-2 gap-4 p-4">
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 p-4">
           <div className="p-4">
             <img src={slide02} className="rounded-lg" alt="" />
           </div>

@@ -1,5 +1,13 @@
+.home-container{
+    background-color: rgb(243, 214, 176);
+}
+
+
 .btn-color{
     color: chocolate;
     background-color: rgb(93, 180, 151);
     border-radius: 5px;
+}
+.border{
+    border: 1px solid black;
 }

@@ -16,7 +16,7 @@ const Product = (props) => {
         <p className="details">Brand:{brand}</p>
       </div>
       <button onClick={() => showInventory ()} className="btn-cart">
-        <p className="btn-text"> Contact</p>
+        <p className="btn-text"> Update</p>
         
       </button>
     </div>

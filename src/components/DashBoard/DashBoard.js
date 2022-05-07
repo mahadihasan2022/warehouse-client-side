@@ -46,12 +46,12 @@ const DashBoard = () => {
       <h2 className="text-2xl font-bold text-center p-8">
         Its Our Website DeshBord.
       </h2>
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-2 sm:grid-cols-1">
         <div>
           <h3 className="text-xl font-bold text-center p-8">
             Investment Vs order
           </h3>
-          <LineChart width={500} height={350} data={data}>
+          <LineChart width={300} height={300} data={data}>
             <Line dataKey={"investment"}></Line>
             <XAxis dataKey={"month"}></XAxis>
             <YAxis dataKey={"sell"}></YAxis>
@@ -60,7 +60,7 @@ const DashBoard = () => {
         </div>
         <div>
           <h3 className="text-xl font-bold text-center p-8">Sell Vs order</h3>
-          <BarChart width={500} height={400} data={data}>
+          <BarChart width={300} height={300} data={data}>
             <XAxis dataKey={"month"}></XAxis>
             <YAxis dataKey={"investment"}></YAxis>
             <Bar dataKey={"order"} barSize={30} fill="#8884d8"></Bar>
