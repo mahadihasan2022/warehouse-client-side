@@ -11,7 +11,7 @@ const InventoryItem = () => {
      
       
         useEffect(() => {
-          fetch("http://localhost:5000/inventory")
+          fetch("https://afternoon-reef-38690.herokuapp.com/inventory")
             .then((res) => res.json())
             .then((data) => setProducts(data));
         }, []);
@@ -22,7 +22,7 @@ const InventoryItem = () => {
         newQuantity = parseInt(perIdDetails.quantity) -1;
         // const makeQuantity = newQuantity;
         // console.log(makeQuantity);
-        const url = `http://localhost:5000/inventory/${updateId}`;
+        const url = `https://afternoon-reef-38690.herokuapp.com/inventory/${updateId}`;
         fetch(url,{
             method : "PUT",
             headers:{

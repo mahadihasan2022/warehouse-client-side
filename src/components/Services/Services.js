@@ -8,7 +8,7 @@ const Services = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("https://afternoon-reef-38690.herokuapp.com/product")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
