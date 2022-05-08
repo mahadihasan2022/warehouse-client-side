@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import ManageInventories from './components/ManageInventories/ManageInventories';
 import MyItem from './components/MyItem/MyItem';
 import NotFound from './components/NotFound/NotFound';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 import SingUp from './components/SingUp/SingUp';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
      <Routes>
      <Route path="/" element={<Home></Home>}></Route>
      <Route path="/Home" element={<Home></Home>}></Route>
-     <Route path="/Inventory" element={<Inventory></Inventory>}></Route>
+     <Route path="/Inventory" element={<RequireAuth><Inventory></Inventory></RequireAuth>}></Route>
      <Route path="/Blogs" element={<Blogs></Blogs>}></Route>
      <Route path="/Login" element={<Login></Login>}></Route>
      <Route path="/SingUp" element={<SingUp></SingUp>}></Route>
