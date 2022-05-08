@@ -1,8 +1,9 @@
 import React from "react";
+import './Blogs.css';
 
 const Blogs = () => {
   return (
-    <div>
+    <div className="my-blogs">
       <div>
         <h1 className="text-4xl font-bold p-4">
           Difference between javascript and nodejs

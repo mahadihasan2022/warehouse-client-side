@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 import Item from '../Item/Item';
+import './InventoryItem.css';
 
 const InventoryItem = () => {
         const [products, setProducts] = useState([]);
+        const navigate = useNavigate();
      
       
         useEffect(() => {
@@ -15,6 +18,13 @@ const InventoryItem = () => {
         const showRemove = (_id) =>{
          console.log('delete', _id);
         }
+
+        const showManageInventories = () =>{
+          console.log('click');
+          const path = `/manageinventories`;
+          navigate(path);
+       }
+        
     return (
         <div className="cont-cont">
             <h1 className='text-center font-bold text-5xl p-4'>Available Item: { products.length}</h1>
@@ -30,6 +40,7 @@ const InventoryItem = () => {
               ))}
             </div>
           </div>
+          <p className='text-center p-8'><button onClick={() => showManageInventories() } className='btn-btn w-20 h-12'>See All</button></p>
         </div>
       </div>
     );
