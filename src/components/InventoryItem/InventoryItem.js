@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Item from '../Item/Item';
 import './InventoryItem.css';
 
 const InventoryItem = () => {
+  const { updateId } = useParams();
         const [products, setProducts] = useState([]);
+        const [perIdDetails, setPerIdDetails] = useState({})
         const navigate = useNavigate();
      
       
@@ -14,9 +16,25 @@ const InventoryItem = () => {
             .then((data) => setProducts(data));
         }, []);
       
-        
+        let newQuantity;
         const showRemove = (_id) =>{
-         console.log('delete', _id);
+        //  console.log('delete', _id);
+        newQuantity = parseInt(perIdDetails.quantity) -1;
+        // const makeQuantity = newQuantity;
+        // console.log(makeQuantity);
+        const url = `http://localhost:5000/inventory/${updateId}`;
+        fetch(url,{
+            method : "PUT",
+            headers:{
+                "content-type":"application/json",
+            },
+            body: JSON.stringify({quantity:newQuantity}),
+            
+        })
+        .then(res => res.json())
+        .then(data => setPerIdDetails(data));
+        
+        console.log(perIdDetails);
         }
 
         const showManageInventories = () =>{
@@ -24,6 +42,7 @@ const InventoryItem = () => {
           const path = `/manageinventories`;
           navigate(path);
        }
+       
         
     return (
         <div className="cont-cont">

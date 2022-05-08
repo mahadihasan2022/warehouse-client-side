@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router';
 
 const Item = (props) => {
     const { product, showRemove } = props;
